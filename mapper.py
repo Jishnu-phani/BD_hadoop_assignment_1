@@ -2,9 +2,17 @@ import json
 import sys
 
 def mapper():
+    buffer = ''
     for line in sys.stdin:
-        data = json.loads(line.strip())
+        line = line.strip().rstrip(',')
 
+        if not line or line in ["[", "]"]:
+            continue
+        buffer += line
+        
+        if buffer.endswith('}'):
+            data = json.loads(buffer)
+            buffer = ""
         if data['sales_data']:
             turnover = 0
             for j in data['sales_data']:
