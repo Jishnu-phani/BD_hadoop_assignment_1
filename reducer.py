@@ -22,7 +22,8 @@ def reducer():
             loss_stores += 1
 
     if current_city:
-        print(f"city: {current_city}, profit_stores: {profit_stores}, loss_stores: {loss_stores}")
+        x = {'city': current_city, 'profit_stores': profit_stores, 'loss_stores': loss_stores}
+        print(x)
 
 if __name__ == "__main__":
     reducer()
