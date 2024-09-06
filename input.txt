@@ -1,4 +1,0 @@
-{"city": "Bangalore", "store_id": "ST01293", "categories": ["Electronics", "Groceries"], "sales_data": {"Electronics": {"revenue": 600000, "cogs": 500000}, "Groceries": {"revenue": 250000, "cogs": 270000}}}
-{"city": "Bangalore", "store_id": "ST01294", "categories": ["Electronics"], "sales_data": {"Electronics": {"revenue": 300000, "cogs": 350000}}}
-{"city": "Mumbai", "store_id": "ST01295", "categories": ["Groceries"], "sales_data": {"Groceries": {"revenue": 200000, "cogs": 150000}}}
-{"city": "Mumbai", "store_id": "ST01296", "categories": ["Electronics", "Groceries"], "sales_data": {"Electronics": {"revenue": 100000, "cogs": 120000}, "Groceries": {"revenue": 50000, "cogs": 60000}}}
