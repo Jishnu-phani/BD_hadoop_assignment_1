@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 
 def reducer3():
@@ -9,7 +9,7 @@ def reducer3():
     for line in sys.stdin:
         line = line.strip()
         parts = line.split()
-        client_id, success, price = parts
+        client_id, pred, price, code = parts
         if current_id is None:
             current_id = client_id
         if current_id != client_id:
@@ -18,8 +18,9 @@ def reducer3():
             cost = 0
             pos = 0
             tot = 0
-        if success == '1':
-            cost += int(price)
+        if code == '200':
+            cost += int(price)  
+        if pred == '1':
             pos += 1
         tot += 1
     print(f"{current_id} {pos}/{tot} {cost}")

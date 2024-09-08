@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 endpoint_prices = {
     'user/profile': 100,
@@ -15,8 +15,8 @@ endpoint_prices = {
 def mapper3():
     for line in sys.stdin:
         parts = line.strip().split()
-        client_id, endpoint, success = parts
-        print(f"{client_id} {success} {endpoint_prices[endpoint]}")
+        client_id, endpoint, pred, code = parts
+        print(f"{client_id} {pred} {endpoint_prices[endpoint]} {code}")
         
 if __name__ == "__main__":
     mapper3()

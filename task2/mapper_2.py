@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 id = {}
 endpoint_dict = {}
@@ -8,6 +8,7 @@ def mapper2():
         if len(parts) == 6:
             timestamp, request_id, client_id, endpoint, servers_down, predicted_code = parts
             if timestamp not in id:
+                id.clear()
                 id[timestamp] = []
                 
             if client_id in id[timestamp]:
@@ -16,6 +17,7 @@ def mapper2():
             id[timestamp].append(client_id)
             
             if timestamp not in endpoint_dict:
+                endpoint_dict.clear()
                 endpoint_dict[timestamp] = {}
                 
             if endpoint not in endpoint_dict[timestamp]:

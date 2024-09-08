@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 endpoint_prices = {
     'user/profile': 100,
@@ -17,9 +17,9 @@ def reducer2():
         parts = line.strip().split()
         request_id, client_id, endpoint, predicted_code, actual_code = parts
         if int(actual_code) == int(predicted_code):
-            print(f"{client_id} {endpoint} {1}")
+            print(f"{client_id} {endpoint} {1} {actual_code}")
         else:
-            print(f"{client_id} {endpoint} {0}")
+            print(f"{client_id} {endpoint} {0} {actual_code}")
         
 if __name__ == "__main__":
     reducer2()
