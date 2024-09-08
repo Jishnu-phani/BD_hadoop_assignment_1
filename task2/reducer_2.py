@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+import sys
+endpoint_prices = {
+    'user/profile': 100,
+    'user/settings': 200,
+    'order/history': 300,
+    'order/checkout': 400,
+    'product/details': 500,
+    'product/search': 600,
+    'cart/add': 700,
+    'cart/remove': 800,
+    'payment/submit': 900,
+    'support/ticket': 1000
+}
+def reducer2():
+    for line in sys.stdin:
+        parts = line.strip().split()
+        request_id, client_id, endpoint, predicted_code, actual_code = parts
+        if int(actual_code) == int(predicted_code):
+            print(f"{client_id} {endpoint} {1}")
+        else:
+            print(f"{client_id} {endpoint} {0}")
+        
+if __name__ == "__main__":
+    reducer2()
