@@ -30,7 +30,7 @@ import sys
 def reducer2():
     for line in sys.stdin:
         request_id, client_id, endpoint, predicted_code, actual_code = line.strip().split()
-        is_match = 1 if actual_code == predicted_code else 0
+        is_match = int(actual_code == predicted_code)  # Efficient comparison
         print(f"{client_id} {endpoint} {is_match} {actual_code}")
 
 if __name__ == "__main__":

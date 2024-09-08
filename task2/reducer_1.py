@@ -14,15 +14,16 @@
 
 #!/usr/bin/env python3
 import sys
+
 def reducer1():
-    pred = None  
+    pred = None  # Initialize predicted status code globally
     for line in sys.stdin:
         d = line.strip().split()
         if len(d) == 5:
             request_id, client_id, endpoint, timestamp, servers_down = d
             print(f"{timestamp} {request_id} {client_id} {endpoint} {servers_down} {pred}")
         elif len(d) == 2:
-            request_id, pred = d
+            request_id, pred = d  # Update predicted status code when provided
 
 if __name__ == "__main__":
     reducer1()

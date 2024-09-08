@@ -19,12 +19,13 @@
 
 #!/usr/bin/env python3
 import sys
+
 def mapper1():
     for line in sys.stdin:
         parts = line.strip().split()
         if len(parts) >= 4:
             request_id, client_id, endpoint, timestamp = parts[:4]
-            servers_down = parts[4] if len(parts) == 5 else 0.0
+            servers_down = parts[4] if len(parts) == 5 else "0.0"  # Cache servers_down
             print(f"{request_id} {client_id} {endpoint} {timestamp} {servers_down}")
         elif len(parts) == 2:
             request_id, predicted_code = parts

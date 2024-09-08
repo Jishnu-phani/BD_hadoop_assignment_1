@@ -36,6 +36,7 @@ def reducer3():
     cost = 0
     pos = 0
     tot = 0
+
     for line in sys.stdin:
         client_id, pred, price, code = line.strip().split()
 
@@ -45,10 +46,11 @@ def reducer3():
         if current_id != client_id:
             print(f"{current_id} {pos}/{tot} {cost}")
             current_id = client_id
-            cost = pos = tot = 0  # Reset values
+            cost = pos = tot = 0  # Reset state for new client
 
+        price = int(price)  # Cache price conversion
         if code == '200':
-            cost += int(price)
+            cost += price
         if pred == '1':
             pos += 1
         tot += 1

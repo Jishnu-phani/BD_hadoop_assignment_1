@@ -33,7 +33,7 @@ endpoint_prices = {
 def mapper3():
     for line in sys.stdin:
         client_id, endpoint, pred, code = line.strip().split()
-        price = endpoint_prices.get(endpoint, 0)  # Default price if endpoint not found
+        price = endpoint_prices[endpoint] 
         print(f"{client_id} {pred} {price} {code}")
 
 if __name__ == "__main__":
